@@ -1,9 +1,19 @@
-<main>
-  <h1 class="title">Hello from Angular !</h1>
+<main layout="column" ng-cloak ng-controller="AppCtrl as ctrl">
+  <md-toolbar layout="row">
+    <md-button ng-click="ctrl.toggleSidenav('left')" hide-gt-sm class="menuBtn">
+      <span class="visually-hidden">Menu</span>
+    </md-button>
+    <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello World</h1>
+  </md-toolbar>
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
+  <div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+      
+    </md-sidenav>
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+
+      </md-content>
+    </div>
+  </div>
 </main>
-<footer>
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</footer>

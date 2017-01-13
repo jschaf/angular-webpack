@@ -1,5 +1,7 @@
 import angular from 'angular';
+import angularMaterial from 'angular-material';
 
+import 'angular-material/angular-material.css';
 import '../style/app.css';
 
 let app = () => {
@@ -14,11 +16,15 @@ class AppCtrl {
   constructor() {
     this.url = 'https://github.com/preboot/angular-webpack';
   }
+
+  toggleSidenav(side) {
+    console.log('Toggling sidenav');
+  }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, [angularMaterial])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 
